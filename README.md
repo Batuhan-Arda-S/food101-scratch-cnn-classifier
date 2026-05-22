@@ -10,7 +10,7 @@ The training pipeline was designed to improve generalization and training stabil
 
 ## Visual Results
 <p align="center">
-  <img src="classifier2.png" width="7500"/>
+  <img src="classifier2.png" width="750"/>
   <img src="classifier3.png" width="750"/>
 </p>
 
