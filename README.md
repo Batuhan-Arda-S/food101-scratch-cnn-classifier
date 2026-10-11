@@ -1,6 +1,23 @@
-# Food-101 CNN — From-Scratch Image Classifier
+# Food101 Image Classification
 
-A custom convolutional neural network designed and trained from scratch in PyTorch for 101-class food image classification. The training work uses no pretrained backbone or transfer learning.
+![Food-101 classifier upload workspace](docs/assets/food101-upload-workspace.png)
+
+A deep learning image classification project built with PyTorch using a custom Convolutional Neural Network trained from scratch on the Food-101 dataset. The model uses no pretrained backbone or transfer learning.
+
+## Project overview
+
+The core work is a 101-class CNN trained with image augmentation and regularization. A Flask browser application was added later with Codex and Antigravity to load the trained checkpoint and display food predictions; the from-scratch model and training work are distinct from that application integration.
+
+## Visual results
+
+<p align="center">
+  <img src="docs/assets/food101-baklava-prediction.png" alt="Food-101 baklava prediction" width="750"/>
+  <img src="docs/assets/food101-tiramisu-prediction.png" alt="Food-101 tiramisu prediction" width="750"/>
+</p>
+
+<p align="center">
+  <img src="docs/assets/food101-pizza-prediction.png" alt="Food-101 pizza prediction" width="750"/>
+</p>
 
 ## Model architecture
 
@@ -32,6 +49,10 @@ The training log reports **70.30% accuracy** and **1.8964 loss** on the Food-101
 The notebook evaluates that test split after every epoch. Its highest logged test accuracy is **70.44% at epoch 49**, but the code saves the model **after epoch 50**, without best-checkpoint selection. The [included checkpoint](Food101_CNN_Classification_Model.pth) matches the original final-epoch training artifact byte for byte (SHA-256: `853ad1f1ce0cae07e948c6c1a9fe9f3796f98c3fa5494b7653501830bc68c456d`). The 70.30% claim refers to this final checkpoint.
 
 The original notebook retains the epoch output, and [epoch-metrics.csv](training/epoch-metrics.csv) extracts all 50 logged train and test results. Reusing the test split during training makes this a recorded experiment result rather than an untouched, one-time final benchmark.
+
+## Technologies and features
+
+The model and training notebook use Python, PyTorch, Torchvision, and CUDA when available. The repository includes a custom CNN, fine-grained food classification, image augmentation, adaptive pooling, and regularized training. The later Flask interface loads the trained weights for browser-based image predictions.
 
 ## Installation and reproduction
 
